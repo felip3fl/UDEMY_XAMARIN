@@ -9,11 +9,11 @@
     <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
         <!-- Place new controls here -->
 
-        <Image Source="Logo.png"/>
-        <Entry Placeholder="Digite o cep" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF"/>
-        <Button Text="BUSCAR CEP" TextColor="#FFFFFF" BackgroundColor="#00416B" />
+        <Image Source="Logo.png" x:Name="Logo"/>
+        <Entry Placeholder="Digite o cep" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF" x:Name="CEP" />
+        <Button Text="BUSCAR CEP" TextColor="#FFFFFF" BackgroundColor="#00416B" x:Name="BOTAO"/>
 
-        <Label Text="" 
+        <Label Text="" x:Name="RESULTADO"
            HorizontalOptions="Center"
            VerticalOptions="Center" />
     </StackLayout>
