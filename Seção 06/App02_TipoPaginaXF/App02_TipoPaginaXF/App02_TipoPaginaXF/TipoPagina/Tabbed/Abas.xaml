@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              x:Class="App02_TipoPaginaXF.TipoPagina.Tabbed.Abas">
 
-    <NavigationPage Title="Item 1">
+    <NavigationPage Title="Item 1" Icon="Xamarin.png">
         <x:Arguments>
             <nav:Pagina1 />
         </x:Arguments>
