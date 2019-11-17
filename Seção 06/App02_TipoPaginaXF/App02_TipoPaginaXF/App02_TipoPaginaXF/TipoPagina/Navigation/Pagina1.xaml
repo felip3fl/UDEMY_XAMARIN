@@ -6,6 +6,13 @@
              mc:Ignorable="d"
              x:Class="App02_TipoPaginaXF.TipoPagina.Navigation.Pagina1"
              Title="Titulo da Navigation">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Pesquisa" Icon="xamarin.png"></ToolbarItem>
+        <ToolbarItem Text="Detalhes" Icon="Page.png"></ToolbarItem>
+        <ToolbarItem Text="Ordenar" Icon="play.png"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Eu sou uma ContentPage"
