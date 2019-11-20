@@ -5786,10 +5786,19 @@ namespace App02_TipoPaginaXF.Droid
 			public const int notify_panel_notification_icon_bg = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int tooltip_frame_dark = 2131165294;
+			public const int Page = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int tooltip_frame_light = 2131165295;
+			public const int play = 2131165295;
+			
+			// aapt resource value: 0x7F070070
+			public const int tooltip_frame_dark = 2131165296;
+			
+			// aapt resource value: 0x7F070071
+			public const int tooltip_frame_light = 2131165297;
+			
+			// aapt resource value: 0x7F070072
+			public const int xamarin = 2131165298;
 			
 			static Drawable()
 			{
