@@ -6,10 +6,26 @@
              mc:Ignorable="d"
              x:Class="App01_LayoutXF.Layouts.Grid.GridPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <!--Define as colunas-->
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="Auto"/> <!--PREENCHA DE ACORDO COM O CONTEUDO-->
+                <ColumnDefinition Width="*"/> <!--PREENCHA TODA A TELA-->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <!--Define as Linhas-->
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Grid.Column="0" Grid.Row ="0"  BackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <BoxView Grid.Column="2" Grid.Row ="0"  BackgroundColor="Blue" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <BoxView Grid.Column="0" Grid.ColumnSpan="3" Grid.Row ="1"  BackgroundColor="Yellow" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+            <BoxView Grid.Column="0" Grid.Row ="2" Grid.ColumnSpan="2" BackgroundColor="Red" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
