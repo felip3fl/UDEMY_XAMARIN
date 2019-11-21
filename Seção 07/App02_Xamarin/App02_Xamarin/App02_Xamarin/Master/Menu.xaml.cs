@@ -19,12 +19,12 @@ namespace App02_Xamarin.Master
 
         private void GoPaginaPerfil1(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new Pages.Perfil1());
+            Detail = new Pages.Perfil1();
         }
 
         private void GoPaginaXamarin(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new Pages.Xamarin());
+            Detail = new Pages.Xamarin();
         }
 
     }
