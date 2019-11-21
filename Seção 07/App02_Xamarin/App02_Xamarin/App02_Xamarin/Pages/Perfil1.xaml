@@ -7,8 +7,15 @@
              x:Class="App02_Xamarin.Pages.Perfil1">
     <ContentPage.Content>
         <StackLayout Spacing="0">
-            <RelativeLayout VerticalOptions="Start" HeightRequest="300" BackgroundColor="Yellow">
-                
+            <RelativeLayout VerticalOptions="Start" HeightRequest="300">
+                <Image Source="Fundo.png" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"/>
+                <Image Source="Perfil.png" WidthRequest="120" 
+                       x:Name="Perfil"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width,Factor=.1,Constant=-60}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height,Factor=.2}" />
+                <Label Text="Miguel de Icaza" 
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,Property=X, Factor=.1, ElementName=Perfil}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,Property=Y, Factor=.1, ElementName=Perfil, Constant=180}"/>
             </RelativeLayout>
             <Grid BackgroundColor="#0D1F2D" HeightRequest="120">
                 <Grid.ColumnDefinitions>
