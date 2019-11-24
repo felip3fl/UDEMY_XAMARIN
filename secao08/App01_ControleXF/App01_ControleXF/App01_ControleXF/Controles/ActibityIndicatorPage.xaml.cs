@@ -7,20 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App01_ControleXF.Menu
+namespace App01_ControleXF.Controles
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Master : MasterDetailPage
+    public partial class ActibityIndicatorPage : ContentPage
     {
-        public Master()
+        public ActibityIndicatorPage()
         {
             InitializeComponent();
         }
-
-        private void GoActivityIndicatorPage(object sender, EventArgs args)
-        {
-            Detail = new Controles.ActibityIndicatorPage();
-        }
-
     }
 }
