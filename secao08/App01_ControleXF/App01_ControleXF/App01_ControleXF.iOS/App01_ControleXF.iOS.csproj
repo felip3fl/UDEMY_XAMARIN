@@ -130,4 +130,7 @@
       <Name>App01_ControleXF</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\buttonIMG.png" />
+  </ItemGroup>
 </Project>
