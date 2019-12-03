@@ -12,6 +12,7 @@
             <StackLayout>
                 <Button Text="Activity Indicator" Clicked="GoActivityIndicatorPage"/>
                 <Button Text="Progress Bar" Clicked="GoProgressBarPage"/>
+                <Button Text="BoxView" Clicked="GoBoxViewPage"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
