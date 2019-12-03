@@ -31,5 +31,10 @@ namespace App01_ControleXF.Menu
         {
             Detail = new Controles.BoxViewPage();
         }
+
+        private void GoLabelPage(object sender, EventArgs args)
+        {
+            Detail = new Controles.LabelPage();
+        }
     }
 }
