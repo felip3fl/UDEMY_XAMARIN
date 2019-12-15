@@ -18,6 +18,7 @@
                 <Button Text="Entry/Editor" Clicked="GoEntryEditorPage"/>
                 <Button Text="DatePicker" Clicked="GoDatePickerPage"/>
                 <Button Text="TimePickerPage" Clicked="GoTimePickerPage"/>
+                <Button Text="Picker" Clicked="GoPickerPage"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
