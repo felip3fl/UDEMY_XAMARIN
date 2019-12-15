@@ -66,7 +66,10 @@ namespace App01_ControleXF.Menu
             Detail = new Controles.SearchBarPage();
         }
 
-        
+        private void GoSliderStepperBarPage(object sender, EventArgs args)
+        {
+            Detail = new Controles.SliderStepperPage();
+        }
 
     }
 }
