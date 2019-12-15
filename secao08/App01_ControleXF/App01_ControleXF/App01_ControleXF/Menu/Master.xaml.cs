@@ -80,5 +80,10 @@ namespace App01_ControleXF.Menu
         {
             Detail = new Controles.ImagePage();
         }
+
+        private void GoListViewPage(object sender, EventArgs args)
+        {
+            Detail = new Controles.ListViewPage();
+        }
     }
 }
