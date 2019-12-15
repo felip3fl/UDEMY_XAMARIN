@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="App01_ControleXF.Controles.ImagePage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout x:Name="Container">
             <Image 
                 Source="https://sm.ign.com/ign_br/screenshot/default/dragon-ball-z-dbz-nuevo-logo-by-saodvd-d8rx6aw_pz8n.png"
                 Aspect="Fill"   
