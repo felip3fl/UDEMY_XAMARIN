@@ -15,6 +15,7 @@
                 <Button Text="BoxView" Clicked="GoBoxViewPage"/>
                 <Button Text="Label" Clicked="GoLabelPage"/>
                 <Button Text="Button" Clicked="GoButtonPage"/>
+                <Button Text="Entry/Editor" Clicked="GoEntryEditorPage"/>
             </StackLayout>
         </ContentPage>
     </MasterDetailPage.Master>
