@@ -8,6 +8,7 @@
              x:Class="App01_ControleXF.Controles.ListViewPage">
     <ContentPage.Content>
         <StackLayout>
+            
             <ListView>
                 
                 <ListView.ItemsSource>
@@ -32,6 +33,23 @@
                 </ListView.ItemTemplate>
                 
             </ListView>
+
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="5" Color="Black"></BoxView>
+
+            <ListView x:Name="ListaPessoas">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="10" Orientation="Horizontal">
+                                <Label Text="{Binding Nome}"/>
+                                <Label Text=" - "/>
+                                <Label Text="{Binding Idade}"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
