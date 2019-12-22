@@ -90,6 +90,11 @@ namespace App01_ControleXF.Menu
         {
             Detail = new Controles.TableViewPage();
         }
-        
+
+        private void GoWebViewPage(object sender, EventArgs args)
+        {
+            Detail = new Controles.WebViewPage();
+        }
+
     }
 }
