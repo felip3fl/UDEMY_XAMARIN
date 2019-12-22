@@ -10,7 +10,7 @@ namespace App2_Tarefa
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new App2_Tarefa.Telas.Inicio);
+            MainPage = new NavigationPage(new App2_Tarefa.Telas.Inicio());
         }
 
         protected override void OnStart()
