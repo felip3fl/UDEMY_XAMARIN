@@ -19,7 +19,7 @@ namespace App2_Tarefa.Telas
 
         public void PrioridadeSelectAction(object sender, EventArgs args)
         {
-            var Stacks = SLPrioridades.Children as List<StackLayout>;
+            var Stacks = SLPrioridades.Children;
 
             foreach (var Linha in Stacks)
             {
@@ -28,7 +28,10 @@ namespace App2_Tarefa.Telas
             }
 
             ((Label)((StackLayout)sender).Children[1]).TextColor = Color.Black;
+             FileImageSource Source = ((Image)((StackLayout)sender).Children[0]).Source as FileImageSource;
 
+            String Prioridade = Source.File.ToString().Replace("Resources/", "").Replace(".png", "");
+            TxtNome.Text = Prioridade;
         }
 
     }
