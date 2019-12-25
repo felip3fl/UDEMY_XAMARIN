@@ -12,7 +12,15 @@
             <Label Text="Prioridade" FontAttributes="Bold" />
             <StackLayout x:Name="SLPrioridades">
                 <StackLayout Spacing="10">
-                    <Image />
+                    <Image>
+                        <Image.Source>
+                            <OnPlatform x:TypeArguments="ImageSource">
+                                <On Platform="Android, iOS" Value="4.png"/>
+                                <On Platform="UWP" Value="Resources/4.png"/>
+                            </OnPlatform>
+                        </Image.Source>
+                    </Image>
+                    
                     <Label Text="Urgente e importante"  HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
                 <StackLayout Spacing="10">
