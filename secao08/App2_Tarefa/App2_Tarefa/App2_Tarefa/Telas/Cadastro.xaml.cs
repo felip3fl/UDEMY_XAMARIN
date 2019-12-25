@@ -40,19 +40,19 @@ namespace App2_Tarefa.Telas
         {
             bool ErroExiste = false;
 
-            if (!(TxtNome.Text.Trim().Length > 0))
+            if (TxtNome.Text == null || TxtNome.Text.Trim().Length <= 0)
             {
                 ErroExiste = true;
-                DisplayAlert("Erro", "Nome não preenchido!","OK");
+                DisplayAlert("Erro", "Nome não preenchido!", "Okay");
             }
 
-            if(!(this.Prioridade > 0))
+            if (Prioridade <= 0)
             {
                 ErroExiste = true;
-                DisplayAlert("Erro", "Prioridade não foi informada!", "OK");
+                DisplayAlert("Erro", "Prioridade não escolhida", "Okay");
             }
 
-            if(ErroExiste == false)
+            if (ErroExiste == false)
             {
                 Tarefa tarefa = new Tarefa();
                 tarefa.Nome = TxtNome.Text.Trim();
@@ -62,7 +62,7 @@ namespace App2_Tarefa.Telas
 
                 App.Current.MainPage = new NavigationPage(new Inicio());
 
-                //Navigation.PopAsync();
+                Navigation.PopAsync();
                  
                 //TxtNome.Text = new GerenciadorTarefa().Listagem().Count.ToString();
             }
