@@ -21,14 +21,17 @@ namespace App2_Tarefa.Modelos
         {
             Lista = Listagem();
             Lista.RemoveAt(Index);
+
+            tarefa.DataFinalizacao = DateTime.Now;
             Lista.Add(tarefa);
             SalvarNoProperties(Lista);
         }
 
-        public void Deletar(Tarefa tarefa)
+        public void Deletar(int index)
         {
             Lista = Listagem();
-            Lista.Remove(tarefa);
+            Lista.RemoveAt(index);
+
             SalvarNoProperties(Lista);
         }
 
