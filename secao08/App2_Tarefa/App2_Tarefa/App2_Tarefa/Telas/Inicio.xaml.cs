@@ -18,11 +18,24 @@ namespace App2_Tarefa.Telas
             InitializeComponent();
 
             DataHoje.Text = DateTime.Now.DayOfWeek.ToString() + ", " + DateTime.Now.ToString("dd/MM");
+
+            CarregarTarefas();
         }
 
         public void ActionGoCadastro(object sender, EventArgs args)
         {
             Navigation.PushAsync(new Cadastro());
+        }
+
+        private void CarregarTarefas()
+        {
+            SLTarefas.Children.Clear();
+
+            List<Tarefa> Lista =  new GerenciadorTarefa().Listagem();
+            foreach(Tarefa tarefa in Lista)
+            {
+                LinhaStackLayout(tarefa);
+            }
         }
 
         public void LinhaStackLayout(Tarefa tarefa)
@@ -48,7 +61,7 @@ namespace App2_Tarefa.Telas
             {
                 StackCentral = new StackLayout() { VerticalOptions = LayoutOptions.Center, Spacing = 0, HorizontalOptions = LayoutOptions.FillAndExpand };
                 ((StackLayout)StackCentral).Children.Add(new Label() { Text = tarefa.Nome, TextColor = Color.Gray });
-                ((StackLayout)StackCentral).Children.Add(new Label() { Text = "Finalizado em " + tarefa.DataFinalizacao.ToString("dd/MM/yyyy - hh:mm") + "h", TextColor = Color.Gray, FontSize = 10 });
+                ((StackLayout)StackCentral).Children.Add(new Label() { Text = "Finalizado em " + tarefa.DataFinalizacao.Value .ToString("dd/MM/yyyy - hh:mm") + "h", TextColor = Color.Gray, FontSize = 10 });
             }
 
            
