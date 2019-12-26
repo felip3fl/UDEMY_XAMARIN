@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Newtonsoft.Json;
 
 namespace App2_Tarefa.Modelos
 {
@@ -40,7 +41,12 @@ namespace App2_Tarefa.Modelos
         {
             if (App.Current.Properties.ContainsKey("Tarefas"))
             {
-                return (List<Tarefa>)App.Current.Properties["Tarefas"];
+                String JsonVal = (String)App.Current.Properties["Tarefas"];
+
+                List<Tarefa> Lista = JsonConvert.DeserializeObject<List<Tarefa>>(JsonVal);
+                return Lista;
+
+                //return (List<Tarefa>)App.Current.Properties["Tarefas"];
             }
 
             return new List<Tarefa>();
@@ -52,6 +58,8 @@ namespace App2_Tarefa.Modelos
             {
                 App.Current.Properties.Remove("Tarefas");
             }
+
+            JsonConvert.SerializeObject(Lista);
 
             App.Current.Properties.Add("Tarefas", Lista);
         }
