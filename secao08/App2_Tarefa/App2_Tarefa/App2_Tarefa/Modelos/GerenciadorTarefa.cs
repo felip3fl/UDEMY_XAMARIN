@@ -7,26 +7,14 @@ namespace App2_Tarefa.Modelos
 {
     public class GerenciadorTarefa
     {
-        public List<Tarefa> Lista { get; set; }
-
+        private List<Tarefa> Lista { get; set; }
         public void Salvar(Tarefa tarefa)
         {
             Lista = Listagem();
             Lista.Add(tarefa);
-            
+
             SalvarNoProperties(Lista);
         }
-
-        public void Finalizar(int Index, Tarefa tarefa)
-        {
-            Lista = Listagem();
-            Lista.RemoveAt(Index);
-
-            tarefa.DataFinalizacao = DateTime.Now;
-            Lista.Add(tarefa);
-            SalvarNoProperties(Lista);
-        }
-
         public void Deletar(int index)
         {
             Lista = Listagem();
@@ -34,25 +22,18 @@ namespace App2_Tarefa.Modelos
 
             SalvarNoProperties(Lista);
         }
+        public void Finalizar(int index, Tarefa tarefa)
+        {
+            Lista = Listagem();
+            Lista.RemoveAt(index);
 
+            tarefa.DataFinalizacao = DateTime.Now;
+            Lista.Add(tarefa);
+            SalvarNoProperties(Lista);
+        }
         public List<Tarefa> Listagem()
         {
             return ListagemNoProperties();
-        }
-
-        private List<Tarefa> ListagemNoProperties()
-        {
-            if (App.Current.Properties.ContainsKey("Tarefas"))
-            {
-                String JsonVal = (String)App.Current.Properties["Tarefas"];
-
-                List<Tarefa> Lista = JsonConvert.DeserializeObject<List<Tarefa>>(JsonVal);
-                return Lista;
-
-                //return (List<Tarefa>)App.Current.Properties["Tarefas"];
-            }
-
-            return new List<Tarefa>();
         }
 
         private void SalvarNoProperties(List<Tarefa> Lista)
@@ -62,9 +43,22 @@ namespace App2_Tarefa.Modelos
                 App.Current.Properties.Remove("Tarefas");
             }
 
-            JsonConvert.SerializeObject(Lista);
+            string JsonVal = JsonConvert.SerializeObject(Lista);
 
-            App.Current.Properties.Add("Tarefas", Lista);
+            App.Current.Properties.Add("Tarefas", JsonVal);
+        }
+        private List<Tarefa> ListagemNoProperties()
+        {
+            if (App.Current.Properties.ContainsKey("Tarefas"))
+            {
+                String JsonVal = (String)App.Current.Properties["Tarefas"];
+
+                List<Tarefa> Lista = JsonConvert.DeserializeObject<List<Tarefa>>(JsonVal);
+                return Lista;
+                //return (List<Tarefa>)App.Current.Properties["Tarefas"];
+            }
+
+            return new List<Tarefa>();
         }
 
     }

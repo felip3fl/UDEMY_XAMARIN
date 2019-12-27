@@ -66,7 +66,7 @@ namespace App2_Tarefa.Telas
             View StackCentral = null;
             if (tarefa.DataFinalizacao == null)
             {
-                StackCentral = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.Fill, Text = tarefa.Nome };
+                StackCentral = new Label() { VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.FillAndExpand, Text = tarefa.Nome };
             }
             else
             {
@@ -81,8 +81,16 @@ namespace App2_Tarefa.Telas
             {
                 Check.Source = ImageSource.FromFile("Resources/CheckOff.png");
             }
+            if (tarefa.DataFinalizacao != null)
+            {
+                Check.Source = ImageSource.FromFile("Resources/CheckOn.png");
+                if (Device.RuntimePlatform == Device.UWP)
+                {
+                    Check.Source = ImageSource.FromFile("Resources/CheckOn.png");
+                }
+            }
             TapGestureRecognizer CheckTap = new TapGestureRecognizer();
-            DeleteTap.Tapped += delegate
+            CheckTap.Tapped += delegate
             {
                 new GerenciadorTarefa().Finalizar(index, tarefa); ;
                 CarregarTarefas();
