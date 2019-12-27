@@ -1,6 +1,7 @@
 ﻿using App2_Tarefa.Modelos;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,10 @@ namespace App2_Tarefa.Telas
         {
             InitializeComponent();
 
-            DataHoje.Text = DateTime.Now.DayOfWeek.ToString() + ", " + DateTime.Now.ToString("dd/MM");
+            CultureInfo culture = new CultureInfo("pt-BR");
+            string Data = DateTime.Now.ToString("dddd, dd {0} MMMM {0} yyyy", culture);
+
+            DataHoje.Text = string.Format(Data, "de");
 
             CarregarTarefas();
         }
