@@ -20,8 +20,6 @@
                 <Setter Property="Padding" Value="10"/>
             </Style>
 
-
-            
             <Style x:Key="Titulo" TargetType="Label">
                 <Setter Property="FontFamily" Value="Segoe UI" />
                 <Setter Property="TextColor" Value="#6A34B0" />
