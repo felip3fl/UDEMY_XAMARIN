@@ -6,6 +6,11 @@
              mc:Ignorable="d"
              x:Class="App1_Estilo.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="Blue"/>
+                <Setter Property="BackgroundColor" Value="Yellow"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
