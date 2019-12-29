@@ -10,7 +10,7 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Menu">
             <StackLayout>
-                <Button Text="Style" Clicked="GoPagina1"/>
+                <Button Text="Implicit Style" Clicked="GoPagina1"/>
                 
             </StackLayout>
         </ContentPage>

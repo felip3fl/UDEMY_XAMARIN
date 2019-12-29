@@ -11,11 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pagina\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <EmbeddedResource Update="Menu\Master.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pagina\ImplicitStylePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

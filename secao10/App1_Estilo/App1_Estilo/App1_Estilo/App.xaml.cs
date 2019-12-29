@@ -10,7 +10,7 @@ namespace App1_Estilo
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new App1_Estilo.Menu.Master();
         }
 
         protected override void OnStart()

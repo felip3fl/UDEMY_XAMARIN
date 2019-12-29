@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace App1_Estilo.Menu
+namespace App1_Estilo.Pagina
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Master : MasterDetailPage
+    public partial class ImplicitStylePage : ContentPage
     {
-        public Master()
+        public ImplicitStylePage()
         {
             InitializeComponent();
-        }
-
-        private void GoPagina1(object sender, EventArgs args)
-        {
-            Detail = new NavigationPage(new Pagina.ImplicitStylePage());
         }
     }
 }
