@@ -8,10 +8,30 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout BackgroundColor="White">
+            
+            <StackLayout BackgroundColor="White" Style="{StaticResource Cabecalho}">
                 <Label Text="CINEMIX" Style="{StaticResource TituloApp}"/>
                 <Label Text="seu app de cinema" Style="{StaticResource SubtituloApp}"/>
             </StackLayout>
+            
+            <StackLayout Style="{StaticResource Conteudo}">
+                <Label Text="Lançamento" Style="{StaticResource Lancamento}"/>
+                <Label Text="Pantera Negra" Style="{StaticResource TituloFilme}"/>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto">                          
+                        </RowDefinition>
+                        <RowDefinition Height="Auto">
+                        </RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Image Source="Fundo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
+
+                </Grid>
+                
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage.Content>
 
