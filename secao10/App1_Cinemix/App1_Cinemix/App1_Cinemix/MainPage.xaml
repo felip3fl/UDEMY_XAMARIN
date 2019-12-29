@@ -7,32 +7,44 @@
              x:Class="App1_Cinemix.MainPage">
 
     <ContentPage.Content>
-        <StackLayout>
-            
-            <StackLayout BackgroundColor="White" Style="{StaticResource Cabecalho}">
-                <Label Text="CINEMIX" Style="{StaticResource TituloApp}"/>
-                <Label Text="seu app de cinema" Style="{StaticResource SubtituloApp}"/>
+
+        <ScrollView>
+
+
+
+            <StackLayout>
+
+                <StackLayout BackgroundColor="White" Style="{StaticResource Cabecalho}">
+                    <Label Text="CINEMIX" Style="{StaticResource TituloApp}"/>
+                    <Label Text="seu app de cinema" Style="{StaticResource SubtituloApp}"/>
+                </StackLayout>
+
+                <StackLayout Style="{StaticResource Conteudo}">
+                    <Label Text="Lançamento" Style="{StaticResource Lancamento}"/>
+                    <Label Text="Pantera Negra" Style="{StaticResource TituloFilme}"/>
+
+                    <Grid>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto">
+                            </RowDefinition>
+                            <RowDefinition Height="Auto">
+                            </RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Image Source="Fundo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand"/>
+                        <Image Source="Poster.png" Margin="0,20,0,0" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start"/>
+
+                    </Grid>
+
+                </StackLayout>
+
             </StackLayout>
-            
-            <StackLayout Style="{StaticResource Conteudo}">
-                <Label Text="Lançamento" Style="{StaticResource Lancamento}"/>
-                <Label Text="Pantera Negra" Style="{StaticResource TituloFilme}"/>
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto">                          
-                        </RowDefinition>
-                        <RowDefinition Height="Auto">
-                        </RowDefinition>
-                    </Grid.RowDefinitions>
-
-                    <Image Source="Fundo.png" Aspect="AspectFill" Grid.Row="0" Grid.Column="0" HorizontalOptions="Center"/>
-
-                </Grid>
-                
-            </StackLayout>
-            
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>
