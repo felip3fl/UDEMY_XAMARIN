@@ -38,12 +38,42 @@
                 <Setter Property="HorizontalOptions" Value="Start" />
             </Style>
 
+            <Style x:Key="Sinopse" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="WidthRequest" Value="460"/>
+                <Setter Property="Margin" Value="0,320,0,0"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="FontFamily" Value="Segoe UI"/>
+                <Setter Property="TextColor" Value="#947AC4"/>
+            </Style>
+
+            <Style x:Key="Poster" TargetType="Image">
+                <Setter Property="Margin" Value="0,20,0,0"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="Start"/>
+            </Style>
+
+            <Style x:Key="Fundo" TargetType="Image">
+                <Setter Property="Aspect" Value="AspectFill"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+
             <Style x:Key="TituloFilme" TargetType="Label" BasedOn="{StaticResource SubtituloApp}">
                 <Setter Property="TextColor" Value="#FFFFFF"/>
                 <Setter Property="FontSize" Value="64"/>
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
+            <Style x:Key="Horarios" TargetType="StackLayout">
+                <Setter Property="Spacing" Value="20"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+                <Setter Property="Orientation" Value="Horizontal"/>
+            </Style>
+            
             <Style x:Key="Horario" TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="#947AC4"/>
                 <Setter Property="Padding" Value="15,7"/>
