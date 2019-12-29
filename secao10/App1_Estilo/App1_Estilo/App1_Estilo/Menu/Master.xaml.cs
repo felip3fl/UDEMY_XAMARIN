@@ -21,5 +21,11 @@ namespace App1_Estilo.Menu
         {
             Detail = new NavigationPage(new Pagina.ImplicitStylePage());
         }
+
+        private void GoPagina2(object sender, EventArgs args)
+        {
+            Detail = new NavigationPage(new Pagina.ExplicitStylePage());
+        }
+
     }
 }
