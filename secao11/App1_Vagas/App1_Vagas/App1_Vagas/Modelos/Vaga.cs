@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace App1_Vagas.Modelos
 {
+    [Table("Vaga")]
     public class Vaga
     {
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
         public string NomeVaga { get; set; }
         public short Quantidade { get; set; }
         public string Cidade { get; set; }
