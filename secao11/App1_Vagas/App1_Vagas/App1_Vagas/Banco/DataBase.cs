@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite;
 using App1_Vagas.Modelos;
+using Xamarin.Forms;
 
 namespace App1_Vagas.Banco
 {
@@ -12,7 +13,10 @@ namespace App1_Vagas.Banco
 
         public DataBase()
         {
-            _conexao = new SQLiteConnection();
+            var dep = DependencyService.Get<ICaminho>();
+            string caminho = dep.ObterCaminho("database.sqllite");
+
+            _conexao = new SQLiteConnection(caminho);
         }
 
         public void Cadastro(Vaga vaga)
