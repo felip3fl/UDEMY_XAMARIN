@@ -10,7 +10,7 @@ namespace App1_Vagas
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new App1_Vagas.Paginas.ConsultaVaga());
         }
 
         protected override void OnStart()
