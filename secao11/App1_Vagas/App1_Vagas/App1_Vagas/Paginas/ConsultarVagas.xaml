@@ -20,7 +20,7 @@
             <Entry Placeholder="Pesquisar" TextChanged="PesquisarAction" />
             <Label Text="15 vagas encontradas" x:Name="lblCount"/>
 
-            <ListView x:Name="ListaVagas">
+            <ListView x:Name="ListaVagas" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
