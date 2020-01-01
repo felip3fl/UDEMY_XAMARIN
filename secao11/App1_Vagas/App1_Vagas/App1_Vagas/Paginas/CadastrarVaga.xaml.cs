@@ -13,12 +13,11 @@ using App1_Vagas.Paginas;
 namespace App1_Vagas.Paginas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CadastroVaga : ContentPage
+    public partial class CadastrarVaga : ContentPage
     {
-        public CadastroVaga()
+        public CadastrarVaga()
         {
             InitializeComponent();
-
         }
 
         public void SalvarAction(object sender, EventArgs args)
@@ -36,7 +35,7 @@ namespace App1_Vagas.Paginas
             DataBase dateBase = new DataBase();
             dateBase.Cadastro(vaga);
 
-            App.Current.MainPage = new NavigationPage(new ConsultaVaga());
+            App.Current.MainPage = new NavigationPage(new ConsultarVagas());
 
         }
 
