@@ -28,7 +28,7 @@ namespace App1_Vagas.Paginas
             TapGestureRecognizer tapGest = (TapGestureRecognizer)lblEditar.GestureRecognizers[0];
             Vaga vaga = tapGest.CommandParameter as Vaga;
 
-            Navigation.PushAsync(new CadastroVaga(vaga));
+            Navigation.PushAsync(new EditarVaga(vaga));
         }
 
         public void ExcluirAction(object sender, EventArgs args)
