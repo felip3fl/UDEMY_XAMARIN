@@ -15,9 +15,14 @@ namespace App1_Vagas.Paginas
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CadastroVaga : ContentPage
     {
-        public CadastroVaga()
+        public CadastroVaga(Vaga vaga = null)
         {
             InitializeComponent();
+
+            if(vaga != null)
+            {
+                //edicao
+            }
         }
 
         public void SalvarAction(object sender, EventArgs args)
