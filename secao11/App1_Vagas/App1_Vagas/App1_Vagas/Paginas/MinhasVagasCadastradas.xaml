@@ -7,10 +7,10 @@
              x:Class="App1_Vagas.Paginas.MinhasVagasCadastradas">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <!--<StackLayout Orientation="Horizontal">
                 <Button Text="Adicionar" Clicked="GoCadastro"/>
                 <Button Text="Minhas Vagas" Clicked="GoMinhasVagas"/>
-            </StackLayout>
+            </StackLayout>-->
 
             <StackLayout Orientation="Horizontal">
                 <Label Text="Vagas" FontSize="24"/>

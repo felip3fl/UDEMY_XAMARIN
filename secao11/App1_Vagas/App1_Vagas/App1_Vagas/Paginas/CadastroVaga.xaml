@@ -7,7 +7,7 @@
              x:Class="App1_Vagas.Paginas.CadastroVaga">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="Vaga" Placeholder="Vaga" />
+            <Entry x:Name="NomeVaga" Placeholder="Vaga" />
             <Entry x:Name="Empresa" Placeholder="Empresa" />
             <Entry x:Name="Quantidade" Placeholder="Quantidade" />
             <Entry x:Name="Cidade" Placeholder="Cidade" />

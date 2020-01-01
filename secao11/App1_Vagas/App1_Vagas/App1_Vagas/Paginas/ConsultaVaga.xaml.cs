@@ -1,4 +1,5 @@
-﻿using App1_Vagas.Modelos;
+﻿using App1_Vagas.Banco;
+using App1_Vagas.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,13 @@ namespace App1_Vagas.Paginas
         public ConsultaVaga()
         {
             InitializeComponent();
+
+            DataBase dataBase = new DataBase();
+            var Lista = dataBase.Consultar();
+            ListaVagas.ItemsSource = Lista;
+
+            lblCount.Text = Lista.Count.ToString();
+
         }
 
         public void GoCadastro(object sender, EventArgs args) 

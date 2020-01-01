@@ -26,6 +26,7 @@ namespace App1_Vagas.Paginas
             vaga.NomeVaga = NomeVaga.Text;
             vaga.Quantidade = short.Parse(Quantidade.Text);
             vaga.Salario = double.Parse(Salario.Text);
+            vaga.Empresa = Empresa.Text;
             vaga.Cidade = Cidade.Text;
             vaga.TipoContratacao = (TipoContratacao.IsToggled) ? "PJ" : "CLT";
             vaga.Telefone = Telefone.Text;
@@ -34,7 +35,7 @@ namespace App1_Vagas.Paginas
             DataBase dateBase = new DataBase();
             dateBase.Cadastro(vaga);
 
-            Navigation.PopAsync();
+            App.Current.MainPage = new NavigationPage(new ConsultaVaga());
 
         }
 

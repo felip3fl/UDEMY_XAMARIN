@@ -18,11 +18,12 @@
             </StackLayout>
 
             <Entry Placeholder="Pesquisar" />
-            <Label Text="15 vagas encontradas"/>
+            <Label Text="15 vagas encontradas" x:Name="lblCount"/>
 
-            <ListView>
+            <ListView x:Name="ListaVagas">
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        <ViewCell>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
@@ -32,17 +33,18 @@
                                 <RowDefinition Height="Auto" >
                                 </RowDefinition>
                             </Grid.RowDefinitions>
-                            <Label Grid.Column="0" Text="{Binding NomeVaga}" FontAttributes="Bold"/>
-                            <Label Grid.Column="0" Text="{Binding Empresa}"/>
-                            <Label Grid.Column="0" Text="{Binding Cidade}"/>
-
-                            <Label Text="+Detalhe">
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="MaisDetalheAction" CommandParameter="{Binding .}"/>
-                                </Label.GestureRecognizers>
-                            </Label>
-                            
-                        </Grid>
+                                <StackLayout Grid.Column="0">
+                                    <Label  Text="{Binding NomeVaga}" FontAttributes="Bold"/>
+                                    <Label  Text="{Binding Empresa}"/>
+                                    <Label  Text="{Binding Cidade}"/>
+                                </StackLayout>
+                                <Label Grid.Column="1" Text="+Detalhe">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="MaisDetalheAction" CommandParameter="{Binding .}"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
