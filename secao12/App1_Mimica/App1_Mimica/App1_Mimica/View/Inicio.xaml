@@ -8,7 +8,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Nome Grupo 1" />
-            <Entry Placeholder="Nome do grupo 1"/>
+            <Entry Placeholder="Nome do grupo 1" Text="{Binding NomeGrupo1}"/>
+            <Label Text="{Binding NomeGrupo1}" />
+            
             <Label Text="Nome Grupo 2" />
             <Entry Placeholder="Nome do grupo 2"/>
             <Label Text="Nível" />
