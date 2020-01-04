@@ -47,6 +47,7 @@ namespace App1_Mimica.ViewModel
 
         private void MostrarPalavraAction()
         {
+            PalavraPontuacao = 3;
             Palavra = "Sentar";
             //PropertyChanged(this, new PropertyChangedEventArgs("Palavra"));
 
