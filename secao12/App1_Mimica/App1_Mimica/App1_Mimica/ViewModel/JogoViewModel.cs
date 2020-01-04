@@ -41,7 +41,7 @@ namespace App1_Mimica.ViewModel
             MostrarPalavra = new Command(MostrarPalavraAction);
             Acertou = new Command(MostrarPalavraAction);
             Errou = new Command(MostrarPalavraAction);
-            Iniciar = new Command(MostrarPalavraAction);
+            Iniciar = new Command(IniciarAction);
         }
 
 
@@ -53,6 +53,20 @@ namespace App1_Mimica.ViewModel
 
             IsVisibleBtnMostrar = false;
             IsVisibleContainerIniciar = true;
+        }
+
+        private void IniciarAction()
+        {
+            IsVisibleContainerIniciar = false;
+            IsVisibleContainerContagem = true;
+
+            int i = Armazenamento.Armazenamento.Jogo.TempoPalavra;
+            Device.StartTimer(TimeSpan.FromSeconds(1), ()=>
+            {
+                TextoContagem = i.ToString();
+                i--;
+                return true;
+            });
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
