@@ -11,13 +11,13 @@
                 <Label Text="Grupo"/>
                 <Label Text="Palavra - Portuação (1)"/>
                 <Label Text="**************" HorizontalOptions="CenterAndExpand"/>
-                <Label Text="Mostrar"/>
+                <Button Text="Mostrar"/>
             </StackLayout>
             <StackLayout>
                 <Label Text="200" FontSize="100" HorizontalOptions="CenterAndExpand"/>
                 <Label Text="seg" HorizontalOptions="CenterAndExpand"/>
                 <StackLayout Orientation="Horizontal">
-                    <Button Text="Acertou" BackgroundColor="Green"/>
+                    <Button Text="Acertou" BackgroundColor="LightGreen"/>
                     <Button Text="Errou" BackgroundColor="OrangeRed"/>
                 </StackLayout>
             </StackLayout>
