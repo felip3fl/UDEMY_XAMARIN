@@ -58,6 +58,38 @@ namespace App1_Mimica.ViewModel
             Palavra = "Sentar";
             //PropertyChanged(this, new PropertyChangedEventArgs("Palavra"));
 
+            var NumNivel = Armazenamento.Armazenamento.Jogo.NivelNumerico;
+
+            if (NumNivel == 0)
+            {
+                Random rd = new Random();
+                int niv = rd.Next(0, 2);
+                int ind = rd.Next(0, Armazenamento.Armazenamento.Palavras[niv].Length);
+                Palavra = Armazenamento.Armazenamento.Palavras[niv][ind];
+                PalavraPontuacao = (byte)((niv==0) ? 1 : (niv==1) ? 3 : 5);
+            }
+            if (NumNivel == 1)
+            {
+                Random rd = new Random();
+                int ind = rd.Next(0, Armazenamento.Armazenamento.Palavras[NumNivel - 1].Length);
+                Palavra = Armazenamento.Armazenamento.Palavras[NumNivel - 1][ind];
+                PalavraPontuacao = 1;
+            }
+            if (NumNivel == 2)
+            {
+                Random rd = new Random();
+                int ind = rd.Next(0, Armazenamento.Armazenamento.Palavras[NumNivel - 1].Length);
+                Palavra = Armazenamento.Armazenamento.Palavras[NumNivel - 1][ind];
+                PalavraPontuacao = 3;
+            }
+            if (NumNivel == 3)
+            {
+                Random rd = new Random();
+                int ind = rd.Next(0, Armazenamento.Armazenamento.Palavras[NumNivel - 1].Length);
+                Palavra = Armazenamento.Armazenamento.Palavras[NumNivel - 1][ind];
+                PalavraPontuacao = 5;
+            }
+
             IsVisibleBtnMostrar = false;
             IsVisibleContainerIniciar = true;
         }
