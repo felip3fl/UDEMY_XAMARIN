@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
 using System.ComponentModel;
+using App1_Mimica.Model;
 
 namespace App1_Mimica.ViewModel
 {
     public class JogoViewModel : INotifyPropertyChanged
     {
+        public Grupo Grupo { get; set; }
+        public string NomeGrupo { get; set; }
+
         private byte _PalavraPontuacao;
         public byte PalavraPontuacao { get { return _PalavraPontuacao; } set { _PalavraPontuacao = value; OnPropertyChanged("PalavraPontuacao"); }}
 
@@ -31,16 +35,19 @@ namespace App1_Mimica.ViewModel
         public Command Errou { get; set; }
         public Command Iniciar { get; set; }
 
-        public JogoViewModel()
+        public JogoViewModel(Grupo grupo)
         {
+            Grupo = grupo;
+            NomeGrupo = grupo.Nome;
+
             IsVisibleContainerContagem = false;
             IsVisibleContainerIniciar = false;
             IsVisibleBtnMostrar = true;
             Palavra = "******************";
 
             MostrarPalavra = new Command(MostrarPalavraAction);
-            Acertou = new Command(MostrarPalavraAction);
-            Errou = new Command(MostrarPalavraAction);
+            Acertou = new Command(AcertouAction);
+            Errou = new Command(ErrouAction);
             Iniciar = new Command(IniciarAction);
         }
 
@@ -76,6 +83,31 @@ namespace App1_Mimica.ViewModel
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(NameProperty));
             }
+        }
+
+        private void AcertouAction()
+        {
+            Grupo.Pontuacao += PalavraPontuacao;
+            GoProximoGrupo();
+        }
+
+        private void GoProximoGrupo()
+        {
+            Grupo grupo;
+            if (Armazenamento.Armazenamento.Jogo.Grupo1 == Grupo)
+            {
+                grupo = Armazenamento.Armazenamento.Jogo.Grupo2;
+            }
+            else
+            {
+                grupo = Armazenamento.Armazenamento.Jogo.Grupo1;
+            }
+            App.Current.MainPage = new View.Jogo(grupo);
+        }
+
+        private void ErrouAction()
+        {
+            GoProximoGrupo();
         }
     }
 }

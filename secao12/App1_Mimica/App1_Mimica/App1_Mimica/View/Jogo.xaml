@@ -8,7 +8,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label Text="Grupo"/>
+                <Label Text="{Binding NomeGrupo}"/>
                 <Label Text="{Binding PalavraPontuacao}"/>
                 <Label Text="{Binding Palavra}"  HorizontalOptions="CenterAndExpand"/>
                 <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarPalavra}"/>
