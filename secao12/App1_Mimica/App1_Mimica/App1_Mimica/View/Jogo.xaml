@@ -3,13 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:conv="clr-namespace:App1_Mimica.View.Util"
              mc:Ignorable="d"
              x:Class="App1_Mimica.View.Jogo">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:LabelPontuacaoConverter x:Key="convPontuacao"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout>
-                <Label Text="{Binding NomeGrupo}"/>
-                <Label Text="{Binding PalavraPontuacao}"/>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nome: "/>
+                    <Label Text="{Binding NomeGrupo}"/>
+                </StackLayout>
+
+                <Label Text="{Binding PalavraPontuacao, Converter={StaticResource convPontuacao}}"/>
                 <Label Text="{Binding Palavra}"  HorizontalOptions="CenterAndExpand"/>
                 <Button Text="Mostrar" IsVisible="{Binding IsVisibleBtnMostrar}" Command="{Binding MostrarPalavra}"/>
             </StackLayout>
