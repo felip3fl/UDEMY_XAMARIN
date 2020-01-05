@@ -72,6 +72,10 @@ namespace App1_Mimica.ViewModel
             {
                 TextoContagem = i.ToString();
                 i--;
+                if(i < 0)
+                {
+                    TextoContagem = "Esgotou o tempo";
+                }
                 return true;
             });
         }
