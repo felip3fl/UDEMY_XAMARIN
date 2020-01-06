@@ -7,6 +7,7 @@
              x:Class="App1_Mimica.View.Inicio">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="{Binding MsgErro}" TextColor="Red"/>
             <Label Text="Nome Grupo 1" />
             <Entry Placeholder="Nome do grupo 1" Text="{Binding Jogo.Grupo1.Nome}"/>
             <Label Text="Nome Grupo 2" />
