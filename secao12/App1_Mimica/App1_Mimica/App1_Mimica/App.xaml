@@ -6,6 +6,27 @@
              mc:Ignorable="d"
              x:Class="App1_Mimica.App">
     <Application.Resources>
+        <ResourceDictionary>
+            <!--CABECALHO-->
+            <Style TargetType="StackLayout" x:Key="Cabecalho">
+                <Setter Property="BackgroundColor" Value="#F2C14E"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+            <Style TargetType="Label" x:Key="CabecalhoTitulo">
+                <Setter Property="TextColor" Value="#FFFFFF"/>
+            </Style>
 
+            <!--CONTAINER-->
+            <Style x:Key="Container" TargetType="StackLayout">
+                <Setter Property="BackgroundColor" Value="#FAFF7F"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+            </Style>
+
+            <!--<Style TargetType="Label">
+                <Setter Property="TextColor" Value="#F78053"/>
+            </Style>-->
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
