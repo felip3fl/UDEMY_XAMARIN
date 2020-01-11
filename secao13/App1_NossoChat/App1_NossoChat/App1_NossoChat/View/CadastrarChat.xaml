@@ -4,12 +4,12 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_NossoChat.View.CadastrarChat">
+             x:Class="App1_NossoChat.View.CadastrarChat"
+             BackgroundColor="#5ED055">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Nome do chat" PlaceholderColor="#5ED055" BackgroundColor="White" TextColor="#5ED055" />
+            <Button BackgroundColor="Transparent" Text="Cadastrar" TextColor="White" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
