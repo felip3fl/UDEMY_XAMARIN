@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "6b29ac97-b1bc-4b86-8d0c-b0f2b56a521e",
+		"name": "XF2018 - REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Elias123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Chats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/chats",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert - Chat",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Como declara IRPF",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/chat",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renomear - Chat",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Grupo de PS4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/chat/8",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chat",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Chat",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nome",
+							"value": "Como declarar IRPJ",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/chat/delete",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chat",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get - Mensagens do Chat",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/chat/6/msg",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chat",
+						"6",
+						"msg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert - Mensagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "mensagem",
+							"value": "Resolveu o meu problema! Agradeço",
+							"type": "text"
+						},
+						{
+							"key": "id_usuario",
+							"value": "3",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/chat/6/msg",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chat",
+						"6",
+						"msg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete - Mensagem",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/chat/3/delete/11",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"chat",
+						"3",
+						"delete",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT - GetToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Elias123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}x/token",
+					"host": [
+						"{{url}}x"
+					],
+					"path": [
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT - GetToken - Header",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nome",
+							"value": "Elias123",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}x/tokenx",
+					"host": [
+						"{{url}}x"
+					],
+					"path": [
+						"tokenx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "JWT - Verificar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjYsImlzcyI6Imh0dHA6Ly93cy5zcGFjZWR1LmNvbS5ici94ZjIwMTgvcmVzdC9hcGl4L3Rva2VuIiwiaWF0IjoxNTI0NzcwNDQyLCJleHAiOjE1MjQ3NzQwNDIsIm5iZiI6MTUyNDc3MDQ0MiwianRpIjoiV0U4QnNCRWFkUERtYnBXdiJ9.el3JKBQID3KkSW9qAFpZlmE5_6LKzRj_vikHqKqEt7c"
+					}
+				],
+				"url": {
+					"raw": "{{url}}x/verify",
+					"host": [
+						"{{url}}x"
+					],
+					"path": [
+						"verify"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
