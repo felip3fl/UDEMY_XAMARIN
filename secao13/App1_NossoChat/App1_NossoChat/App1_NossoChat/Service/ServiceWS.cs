@@ -54,7 +54,6 @@ namespace App1_NossoChat.Service
             }
 
             return null;
-
         }
 
         public static bool InsertChat(Chat chat)
@@ -110,6 +109,27 @@ namespace App1_NossoChat.Service
             return false;
         }
 
+        public static List<Mensagem> GetMensagensChat(Chat chat)
+        {
+            var URL = EnderecoBase + "/chat/" + chat.id + "/msg" ;
+
+            HttpClient requisicao = new HttpClient();
+            HttpResponseMessage resposta = requisicao.DeleteAsync(URL).GetAwaiter().GetResult();
+
+            if (resposta.StatusCode == HttpStatusCode.OK)
+            {
+                string conteudo =  resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+                if (conteudo.Length > 2)
+                {
+                    List<Mensagem> lista = JsonConvert.DeserializeObject<List<Mensagem>>(conteudo);
+                    return lista;
+                }
+                return null;
+            }
+
+            return null;
+        }
 
     }
 }
