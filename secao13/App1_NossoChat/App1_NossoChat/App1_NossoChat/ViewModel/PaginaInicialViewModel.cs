@@ -51,7 +51,7 @@ namespace App1_NossoChat.ViewModel
             }else
             {
                 App.Current.Properties["LOGIN"] = JsonConvert.SerializeObject(usuarioLogado);
-                App.Current.MainPage = new NavigationPage(new View.Chats());
+                App.Current.MainPage = new NavigationPage(new View.Chats()) { BarBackgroundColor= Color.FromHex("#5ED055"), BarTextColor = Color.White };
             }
         }
 

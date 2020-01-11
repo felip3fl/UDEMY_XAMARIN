@@ -3,17 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             Title="NossoChat"
              mc:Ignorable="d"
              x:Class="App1_NossoChat.View.Chats">
     <ContentPage.ToolbarItems>
-        
+        <ToolbarItem Icon="add.png" Text="Adicionar Chat" Command="{Binding AdicionarCommand}"/>
+        <ToolbarItem Icon="sort.png" Text="Orderna alfabeticamente" Command="{Binding OrdenarCommand}"/>
+        <ToolbarItem Icon="refresh.png" Text="Atualização da lista de Chats" Command="{Binding AtualizarCommand}"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView>
+            <ListView ItemsSource="{Binding Chats}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding nome}" TextColor="#5ED055" />
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding nome}" TextColor="#5ED055" />
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
