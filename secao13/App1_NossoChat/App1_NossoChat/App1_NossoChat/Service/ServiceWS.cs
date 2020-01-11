@@ -30,7 +30,8 @@ namespace App1_NossoChat.Service
 
             if (resposta.StatusCode == HttpStatusCode.OK)
             {
-                //deserializar, retorna 
+                var conteudo = resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                return JsonConvert.DeserializeObject<Usuario>(conteudo);
             }
 
             return null;

@@ -13,7 +13,7 @@
             <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding nome}" TextColor="5ED055" />
+                        <TextCell Text="{Binding nome}" TextColor="#5ED055" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

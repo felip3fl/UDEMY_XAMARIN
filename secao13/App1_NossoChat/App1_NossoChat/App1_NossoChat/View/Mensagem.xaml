@@ -9,7 +9,7 @@
         <StackLayout>
             <ScrollView>
                 <StackLayout>
-                    <Frame OutlineColor="" CornerRadius="0" HorizontalOptions="Start">
+                    <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
                         <StackLayout>
                             <Label Text="Felipe123" FontSize="10" TextColor="#5ED055"/>
                             <Label Text="Olá amigos tudo bem" TextColor="#5ED055"/>
@@ -23,7 +23,7 @@
             </ScrollView>
             
             <StackLayout Orientation="Horizontal">
-            <Frame OutlineColor="" CornerRadius="0">
+                <Frame OutlineColor="#5ED055" CornerRadius="0">
                 <Entry Placeholder="Mensagem" BackgroundColor="White" TextColor="#5ED055" HorizontalOptions="FillAndExpand"/>
             </Frame>
             <Button Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
