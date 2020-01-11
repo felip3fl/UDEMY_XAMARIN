@@ -28,7 +28,7 @@ namespace App1_NossoChat.Service
             HttpClient requisicao = new HttpClient();
             HttpResponseMessage resposta = requisicao.PostAsync(URL, param).GetAwaiter().GetResult();
 
-            if(resposta.StatusCode == HttpStatusCode.OK)
+            if (resposta.StatusCode == HttpStatusCode.OK)
             {
                 //deserializar, retorna 
             }
@@ -46,7 +46,7 @@ namespace App1_NossoChat.Service
             if (resposta.StatusCode == HttpStatusCode.OK)
             {
                 string conteudo = resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                if(conteudo.Length > 2)
+                if (conteudo.Length > 2)
                 {
                     List<Chat> lista = JsonConvert.DeserializeObject<List<Chat>>(conteudo);
                     return lista;
@@ -57,5 +57,23 @@ namespace App1_NossoChat.Service
 
         }
 
+        public static bool InsertChat(Chat chat)
+        {
+            var URL = EnderecoBase + "/chat";
+
+            FormUrlEncodedContent param = new FormUrlEncodedContent(new[]{
+                new KeyValuePair<string,string>("nome",chat.nome),
+            });
+
+            HttpClient requisicao = new HttpClient();
+            HttpResponseMessage resposta = requisicao.PostAsync(URL, param).GetAwaiter().GetResult();
+
+            if (resposta.StatusCode == HttpStatusCode.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
 }
