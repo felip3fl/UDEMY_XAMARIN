@@ -6,8 +6,13 @@
              mc:Ignorable="d"
              x:Class="App1_Mimica.View.Util.Cabecalho">
   <ContentView.Content>
-      <StackLayout Style="{StaticResource Cabecalho}">
+      <StackLayout Orientation="Horizontal" Style="{StaticResource Cabecalho}">
           <Label Text="Jogo de Mímica" Style="{StaticResource CabecalhoTitulo}" />
-      </StackLayout>
+            <Label Text="Sair" HorizontalOptions="EndAndExpand">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="SairEvento"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
   </ContentView.Content>
 </ContentView>

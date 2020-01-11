@@ -110,6 +110,9 @@ namespace App1_Mimica.ViewModel
             IsVisibleContainerContagem = true;
 
             int i = Armazenamento.Armazenamento.Jogo.TempoPalavra;
+            TextoContagem = i.ToString();
+            i--;
+
             Device.StartTimer(TimeSpan.FromSeconds(1), ()=>
             {
                 TextoContagem = i.ToString();
