@@ -5,6 +5,7 @@ using System.Text;
 using System.Net;
 using System.Net.Http;
 using App1_NossoChat.Model;
+using Newtonsoft.Json;
 
 namespace App1_NossoChat.Service
 {
@@ -34,5 +35,27 @@ namespace App1_NossoChat.Service
 
             return null;
         }
+
+        public static List<Chat> GetChats()
+        {
+            var URL = EnderecoBase + "/chats";
+
+            HttpClient requisicao = new HttpClient();
+            HttpResponseMessage resposta = requisicao.GetAsync(URL).GetAwaiter().GetResult();
+
+            if (resposta.StatusCode == HttpStatusCode.OK)
+            {
+                string conteudo = resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                if(conteudo.Length > 2)
+                {
+                    List<Chat> lista = JsonConvert.DeserializeObject<List<Chat>>(conteudo);
+                    return lista;
+                }
+            }
+
+            return null;
+
+        }
+
     }
 }
