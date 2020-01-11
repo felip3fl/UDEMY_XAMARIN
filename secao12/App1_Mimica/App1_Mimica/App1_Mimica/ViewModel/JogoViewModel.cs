@@ -73,7 +73,7 @@ namespace App1_Mimica.ViewModel
             if (NumNivel == 0)
             {
                 Random rd = new Random();
-                int niv = rd.Next(0, 2);
+                int niv = rd.Next(0, 3);
                 int ind = rd.Next(0, Armazenamento.Armazenamento.Palavras[niv].Length);
                 Palavra = Armazenamento.Armazenamento.Palavras[niv][ind];
                 PalavraPontuacao = (byte)((niv==0) ? 1 : (niv==1) ? 3 : 5);
