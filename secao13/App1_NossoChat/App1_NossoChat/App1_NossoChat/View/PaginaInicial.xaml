@@ -4,12 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="App1_NossoChat.View.PaginaInicial">
+             x:Class="App1_NossoChat.View.PaginaInicial"
+             BackgroundColor="#5ED055">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Nosso Chat" TextColor="White"/>
+
+            <StackLayout
+                                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" >
+                <Entry Text="{Binding Nome}" BackgroundColor="White" TextColor="5ED055" />
+                <Entry Text="{Binding Senha}" BackgroundColor="White" TextColor="5ED055" />
+                <Button BackgroundColor="Transparent" TextColor="White" Text="Acessar/Cadastrar"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
