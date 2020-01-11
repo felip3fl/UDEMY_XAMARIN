@@ -95,5 +95,21 @@ namespace App1_NossoChat.Service
             return false;
         }
 
+        public static bool DeleteChat(Chat chat)
+        {
+            var URL = EnderecoBase + "/chat/delete/" + chat.id;
+
+            HttpClient requisicao = new HttpClient();
+            HttpResponseMessage resposta = requisicao.DeleteAsync(URL).GetAwaiter().GetResult();
+
+            if (resposta.StatusCode == HttpStatusCode.OK)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
     }
 }
