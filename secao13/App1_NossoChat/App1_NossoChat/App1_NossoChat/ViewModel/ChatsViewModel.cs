@@ -11,6 +11,29 @@ namespace App1_NossoChat.ViewModel
 {
     public class ChatsViewModel : INotifyPropertyChanged
     {
+        
+
+        private Chat _selectedItemChat { get; set; }
+        public Chat SelectedItemChat
+        {
+            get { return _selectedItemChat; }
+            set
+            {
+                _selectedItemChat = value;
+                OnProPertyChanged("SelectedItemChat");
+                GoPaginaMensagem(value);
+            }
+        }
+
+        private void GoPaginaMensagem(Chat chat)
+        {
+            if(chat != null)
+            {
+                ((NavigationPage)App.Current.MainPage).Navigation.PushAsync(new View.Mensagem(chat));
+            }
+            
+        }
+
         private List<Chat> _chats { get; set; }
         public List<Chat> Chats { 
             get { return _chats; } 
@@ -18,6 +41,8 @@ namespace App1_NossoChat.ViewModel
                 OnProPertyChanged("Chats");
             } 
         }
+
+
 
         public Command AdicionarCommand { get; set; }
         public Command OrdenarCommand { get; set; }
