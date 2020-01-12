@@ -46,6 +46,7 @@ namespace App1_NossoChat.ViewModel
             Chats = ServiceWS.GetChats();
         }
 
+        public event PropertyChangedEventHandler PropertyChanged;
         private void OnProPertyChanged(string PropertyName)
         {
             if(PropertyChanged != null)
@@ -54,6 +55,6 @@ namespace App1_NossoChat.ViewModel
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        
     }
 }

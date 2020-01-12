@@ -57,6 +57,5 @@ namespace App1_NossoChat.ViewModel
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-
     }
 }
