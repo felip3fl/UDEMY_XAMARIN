@@ -115,7 +115,7 @@ namespace App1_NossoChat.Service
             var URL = EnderecoBase + "/chat/" + chat.id + "/msg" ;
 
             HttpClient requisicao = new HttpClient();
-            HttpResponseMessage resposta = requisicao.DeleteAsync(URL).GetAwaiter().GetResult();
+            HttpResponseMessage resposta = requisicao.GetAsync(URL).GetAwaiter().GetResult();
 
             if (resposta.StatusCode == HttpStatusCode.OK)
             {

@@ -10,6 +10,6 @@ namespace App1_NossoChat.Model
         public int id_chat { get; set; }
         public int id_usuario { get; set; }
         public string mensagem { get; set; }
-        public Usuario usario { get; set; }
+        public Usuario usuario { get; set; }
     }
 }
