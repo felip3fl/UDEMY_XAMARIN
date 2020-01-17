@@ -39,9 +39,6 @@ namespace App3_JWTAsync.Service
             {
                 return resposta.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             }
-
-
-
         }
         public async static Task<string> Verificar()
         {
