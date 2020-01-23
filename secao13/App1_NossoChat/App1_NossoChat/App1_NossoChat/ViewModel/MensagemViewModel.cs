@@ -11,7 +11,7 @@ namespace App1_NossoChat.ViewModel
 {
     public class MensagemViewModel : INotifyPropertyChanged
     {
-        private StackLayout SL;
+        //private StackLayout SL;
         private Chat chat;
         private List<Mensagem> _mensagens { get; set; }
         public List<Mensagem> Mensagens
@@ -21,11 +21,6 @@ namespace App1_NossoChat.ViewModel
             {
                 _mensagens = value;
                 OnProPertyChanged("Mensagens");
-                if(value != null)
-                {
-                    ShowOnScreen();
-                }
-                
             }
         }
 
@@ -44,10 +39,10 @@ namespace App1_NossoChat.ViewModel
         public Command AtualizarCommand { get; set; }
 
 
-        public MensagemViewModel(Chat chat, StackLayout SLMensagemContainer)
+        public MensagemViewModel(Chat chat)
         {
             this.chat = chat;
-            SL = SLMensagemContainer;
+            
             //Mensagens = ServiceWS.GetMensagensChat(chat);
             Atualizar();
             BtnEnviarCommand = new Command(BtnEnviar);
@@ -78,47 +73,6 @@ namespace App1_NossoChat.ViewModel
             TxtMensagem = string.Empty;
         }
 
-        private void ShowOnScreen()
-        {
-            var usuario = UsuarioUtil.GetUsuarioLogado();
-
-            SL.Children.Clear();
-            foreach(var msg in Mensagens)
-            {
-                if (msg.usuario.id == usuario.id)
-                {
-                    SL.Children.Add(CriarMensagemPropria(msg));
-                }
-                else
-                {
-                    SL.Children.Add(CriarMensagemOutrosUsuarios(msg));
-                }
-            }
-        }
-
-        private Xamarin.Forms.View CriarMensagemPropria(Mensagem mensagem)
-        {
-            var layout = new StackLayout() { Padding = 5, BackgroundColor = Color.FromHex("#5ED055"), HorizontalOptions = LayoutOptions.End };
-            var label = new Label() { TextColor = Color.White, Text = mensagem.mensagem };
-
-            layout.Children.Add(label);
-            return layout;
-        }
-
-        private Xamarin.Forms.View CriarMensagemOutrosUsuarios(Mensagem mensagem)
-        {
-            var labelNome = new Label() { Text = mensagem.usuario.nome, FontSize = 10, TextColor = Color.FromHex("#5ED055")};
-            var labelMensagem = new Label() { Text = mensagem.mensagem, TextColor = Color.FromHex("#5ED055") }; ;
-
-            var SL = new StackLayout();
-            SL.Children.Add(labelNome);
-            SL.Children.Add(labelMensagem);
-
-            var frame = new Frame() { OutlineColor = Color.FromHex("#5ED055"), CornerRadius = 0, HorizontalOptions = LayoutOptions.Start };
-            frame.Content = SL;
-
-            return frame;
-        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnProPertyChanged(string PropertyName)
