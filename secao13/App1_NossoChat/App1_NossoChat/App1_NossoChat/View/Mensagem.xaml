@@ -3,27 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:util="clr-namespace:App1_NossoChat.Util"
              mc:Ignorable="d"
              x:Class="App1_NossoChat.View.Mensagem">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="minhasMensagensTemplate">
+                <ViewCell>
+                    <StackLayout Padding="10" Margin="10" BackgroundColor="#5ED055" HorizontalOptions="End">
+                        <Label Text="{Binding mensagem}" TextColor="White" />
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="mensagensOutrasPessoasTemplate">
+                <ViewCell>
+                    <Frame OutlineColor="#5ED055" CornerRadius="0" Padding="10" Margin="10" HorizontalOptions="Start">
+                        <StackLayout>
+                            <Label Text="{Binding usuario.nome}" FontSize="10" TextColor="#5ED055"/>
+                            <Label Text="{Binding mensagem}" TextColor="#5ED055"/>
+                        </StackLayout>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+
+            <util:MensagemDataTemplateSelector x:Key="MensagemDataTemplateSelector"
+                MensagensOutrasPessoasTemplate="{StaticResource mensagensOutrasPessoasTemplate}"
+                MinhasMensagensTemplate="{StaticResource minhasMensagensTemplate}" />
+        </ResourceDictionary>
+        
+    </ContentPage.Resources>
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Atualizar mensagens" Icon="refresh.png" Command="{Binding AtualizarCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-
-            <ListView ItemsSource="{Binding Mensagens}" HasUnevenRows="True" VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Frame OutlineColor="#5ED055" CornerRadius="0" Padding="5" HorizontalOptions="Start">
-                                <StackLayout>
-                                    <Label Text="{Binding usuario.nome}" FontSize="10" TextColor="#5ED055"/>
-                                    <Label Text="{Binding mensagem}" TextColor="#5ED055"/>
-                                </StackLayout>
-                            </Frame>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
+            
+            <ListView ItemsSource="{Binding Mensagens}" HasUnevenRows="True" VerticalOptions="FillAndExpand" ItemTemplate="{StaticResource MensagemDataTemplateSelector}">
             </ListView>
 
             <StackLayout Orientation="Horizontal">
@@ -31,20 +48,7 @@
                 <Button Command="{Binding BtnEnviarCommand}" Text="Enviar" BackgroundColor="#5ED055" TextColor="White"/>
             </StackLayout>
 
-            <!--<ScrollView>
-                <StackLayout x:Name="SLMensagemContainer">
-                    <Frame OutlineColor="#5ED055" CornerRadius="0" HorizontalOptions="Start">
-                        <StackLayout>
-                            <Label Text="Felipe123" FontSize="10" TextColor="#5ED055"/>
-                            <Label Text="Olá amigos tudo bem" TextColor="#5ED055"/>
-                        </StackLayout>
-                    </Frame>
-
-                    <StackLayout Padding="5" BackgroundColor="#5ED055" HorizontalOptions="End">
-                        <Label Text="Felipe123" FontSize="10" TextColor="White"/>
-                    </StackLayout>
-                </StackLayout>
-            </ScrollView>-->
+           
             
 
         </StackLayout>
