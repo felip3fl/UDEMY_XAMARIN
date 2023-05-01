@@ -1,8 +1,13 @@
-<h1 align="center"> <img src="https://user-images.githubusercontent.com/20684484/212168629-795c6dd1-1205-4d20-b4b5-5c1b00ce1818.png" width="210px" align="center" ><BR><BR>XAMARIN<BR><BR></h1>
+<h3 align="center"> <img src="https://user-images.githubusercontent.com/20684484/212168629-795c6dd1-1205-4d20-b4b5-5c1b00ce1818.png" width="200px" align="center" ><BR><BR>XAMARIN</h3>
 
-<h4 align="center"> 
-    :construction:  Projeto usado para estudo, forever em construção  :construction:
+<h4 align="center">
+:construction:  Projeto usado para estudo, forever em construção  :construction:
 </h4>
+
+<h3 align="center">
+<img src="https://img.shields.io/badge/STATUS-EM%20DESENVOLVIMENTO-blue">
+<img src="https://img.shields.io/badge/PROJECT%20VERSION-0.0.0-blue">
+</h3>
 
 <BR>
 
@@ -10,10 +15,6 @@
 
 <p align="justify">
  Projeto desenvolvido usando XAMARIN com o proposito de estudo
-</p>
-<p align="center">
-<img src="https://img.shields.io/badge/STATUS-EM%20DESENVOLVIMENTO-green">
-<img src="https://img.shields.io/badge/PROJECT%20VERSION-0.0.0-blue">
 </p>
 
 <BR>
